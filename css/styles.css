@@ -11081,7 +11081,7 @@ html {
   }
 
   50% {
-    transform: translateY(-30px);
+    transform: translateY(-20px);
     /* Altura del brinco */
   }
 }
