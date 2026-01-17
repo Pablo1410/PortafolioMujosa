@@ -11036,6 +11036,48 @@ html {
     line-height: 2.5rem;
   }
 }
+.jump-container {
+  display: flex;
+  gap: 10px;
+  /* Espacio entre letras */
+}
+
+.jump-container span {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  display: inline-block;
+  /* Importante para que el transform funcione */
+  animation: jump 1s infinite;
+}
+
+/* El truco: Cada letra empieza un poco después que la anterior */
+.jump-container span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.jump-container span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.jump-container span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+/* Definición del salto */
+@keyframes jump {
+
+  0%,
+  100% {
+    transform: translateY(0);
+    /* Posición inicial */
+  }
+
+  50% {
+    transform: translateY(-30px);
+    /* Altura del brinco */
+  }
+}
 
 .footer {
   padding-top: 5rem;
