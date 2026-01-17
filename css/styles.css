@@ -11048,7 +11048,8 @@ html {
   color: white;
   display: inline-block;
   /* Importante para que el transform funcione */
-  animation: jump 1s infinite;
+  animation: jump 1.5s infinite;
+  /*animation: bounce 2s infinite;*/
 }
 
 /* El truco: Cada letra empieza un poco después que la anterior */
@@ -11057,18 +11058,18 @@ html {
 }
 
 .jump-container span:nth-child(3) {
-  animation-delay: 0.2s;
-}
-
-.jump-container span:nth-child(4) {
   animation-delay: 0.3s;
 }
 
+.jump-container span:nth-child(4) {
+  animation-delay: 0.5s;
+}
+
 .jump-container span:nth-child(5) {
-  animation-delay: 0.4s;
+  animation-delay: 0.7s;
 }
 .jump-container span:nth-child(6) {
-  animation-delay: 0.5s;
+  animation-delay: 0.9s;
 }
 /* Definición del salto */
 @keyframes jump {
