@@ -51,4 +51,27 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     });
 
+    // 3. Fade-in on scroll con IntersectionObserver
+    const fadeTargets = document.querySelectorAll(
+        '.portfolio .col-md-6, .page-section-heading, .divider-custom, .about-section .lead, #contact .col-lg-8'
+    );
+    fadeTargets.forEach((el, i) => {
+        el.classList.add('fade-in-up');
+        // Retraso escalonado para los items del portfolio
+        if (el.closest('.portfolio')) {
+            el.style.transitionDelay = `${i * 0.08}s`;
+        }
+    });
+
+    const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                fadeObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
+
+    fadeTargets.forEach(el => fadeObserver.observe(el));
+
 });
